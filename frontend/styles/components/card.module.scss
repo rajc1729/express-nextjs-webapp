@@ -12,3 +12,24 @@
   border-radius: 5px;
   object-fit: cover;
 }
+
+.sub_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //   background-color: aqua;
+}
+
+.sub_container > p {
+  margin-left: 10px;
+  font-size: 18px;
+  line-height: 18px;
+  color: var(--lightDarkText);
+}
+
+.sub_container > span {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 10px;
+  margin-left: 5px;
+}

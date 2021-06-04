@@ -21,8 +21,14 @@ const CountryCard: React.SFC<CountryCardProps> = ({ country }) => {
             <h1>{country.name}</h1>
           </a>
         </Link>
-        <p>capital: {country.capital}</p>
-        <p>Population: {country.population}</p>
+        <div className={styles.sub_container}>
+          <span>capital: </span>
+          <p>{country.capital}</p>
+        </div>
+        <div className={styles.sub_container}>
+          <span>Population: </span>
+          <p>{country.population}</p>
+        </div>
       </div>
     </>
   );

@@ -4,7 +4,7 @@ export interface CustomButtonProps {
   children?: React.ReactNode;
   fill?: boolean;
   color?: string;
-  clickAction: (event) => void;
+  onClick?: (event) => void;
   disabled?: boolean;
 }
 
@@ -12,8 +12,8 @@ const CustomButton: React.SFC<CustomButtonProps> = ({
   children,
   fill,
   color,
-  clickAction,
-  disabled
+  onClick,
+  disabled,
 }) => {
   return (
     <>
@@ -26,7 +26,7 @@ const CustomButton: React.SFC<CustomButtonProps> = ({
                 ? { backgroundColor: "#F26358" }
                 : { backgroundColor: "#F2635866" }
             }
-            onClick={clickAction}
+            onClick={onClick}
             disabled={disabled}
           >
             {children}
@@ -39,7 +39,7 @@ const CustomButton: React.SFC<CustomButtonProps> = ({
                 ? { backgroundColor: "#446BE5" }
                 : { backgroundColor: "#446BE566" }
             }
-            onClick={clickAction}
+            onClick={onClick}
             disabled={disabled}
           >
             {children}
@@ -48,7 +48,7 @@ const CustomButton: React.SFC<CustomButtonProps> = ({
       ) : (
         <button
           className={styles.unfill_button}
-          onClick={clickAction}
+          onClick={onClick}
           disabled={disabled}
         >
           {children}
@@ -61,7 +61,7 @@ const CustomButton: React.SFC<CustomButtonProps> = ({
 CustomButton.defaultProps = {
   fill: true,
   color: "blue",
-  disabled: false
+  disabled: false,
 };
 
 export default CustomButton;
