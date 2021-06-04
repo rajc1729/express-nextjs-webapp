@@ -4,7 +4,6 @@ const countryModel = db.countryModel;
 
 exports.checkCacheStatus = (req, res, next) => {
   countryModel.find({}, function (err, countries) {
-    console.log(countries.length);
     if (err) {
       console.log("Error getting the countries");
     } else if (countries.length !== 0) {

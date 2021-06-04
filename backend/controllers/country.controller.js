@@ -58,3 +58,21 @@ exports.findByRegion = (req, res) => {
       });
     });
 };
+
+// Find a single country with an region
+exports.searchByCountryName = (req, res) => {
+  const countryName = req.params.countryName;
+
+  countryModel
+    .search(countryName)
+    .then((data) => {
+      if (data.length === 0)
+        res.status(404).send({ message: "Not countries found" });
+      else res.send({ count: data.length, data: data });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Error retrieving countries",
+      });
+    });
+};

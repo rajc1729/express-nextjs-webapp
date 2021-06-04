@@ -17,5 +17,12 @@ module.exports = (app) => {
     country.findByRegion
   );
 
+  // Search by country name
+  router.get(
+    "/search/:countryName",
+    middlewares.checkCacheStatus,
+    country.searchByCountryName
+  );
+
   app.use("/api/country", router);
 };

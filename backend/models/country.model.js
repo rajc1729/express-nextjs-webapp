@@ -1,7 +1,10 @@
-module.exports = (mongoose) => {
+module.exports = (mongoose, searchable) => {
   const countrySchema = mongoose.Schema(
     {
-      name: String,
+      name: {
+        type: String,
+        searchable: true,
+      },
       code: {
         type: String,
         required: true,
@@ -20,6 +23,7 @@ module.exports = (mongoose) => {
     { code: 1, region: 1, createdAt: 1 },
     { expireAfterSeconds: 86400 }
   );
+  countrySchema.plugin(searchable);
 
   const countryModel = mongoose.model("country", countrySchema);
 
