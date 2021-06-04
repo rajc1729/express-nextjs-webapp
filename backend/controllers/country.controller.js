@@ -63,8 +63,13 @@ exports.findByRegion = (req, res) => {
 exports.searchByCountryName = (req, res) => {
   const countryName = req.params.countryName;
 
+  let searchRegion = null;
+  if (req.query.region) {
+    searchRegion = { region: req.query.region };
+  }
+
   countryModel
-    .search(countryName)
+    .search(countryName, searchRegion)
     .then((data) => {
       res.send({ count: data.length, data: data });
     })
