@@ -66,9 +66,7 @@ exports.searchByCountryName = (req, res) => {
   countryModel
     .search(countryName)
     .then((data) => {
-      if (data.length === 0)
-        res.status(404).send({ message: "Not countries found" });
-      else res.send({ count: data.length, data: data });
+      res.send({ count: data.length, data: data });
     })
     .catch((err) => {
       res.status(500).send({
