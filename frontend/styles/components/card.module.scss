@@ -1,3 +1,12 @@
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .card_container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 300px;
@@ -32,4 +41,19 @@
   font-size: 18px;
   line-height: 10px;
   margin-left: 5px;
+}
+
+.external_link {
+  @include button-reset;
+  svg {
+    margin-right: 17px;
+  }
+  display: flex;
+  font-size: 16px;
+  color: var(--lightDarkText);
+  margin-top: 10px;
+}
+
+.external_link:hover {
+  text-decoration: underline;
 }

@@ -5,6 +5,8 @@ import Header from "../../../components/header";
 import { apiCall } from "../../../service/common";
 import styles from "../../../styles/CountryDetails.module.scss";
 import Loading from "../../../components/Loading";
+import Link from "next/link";
+import BorderLink from "../../../components/BorderLink";
 
 export const LocationIcon = () => {
   return (
@@ -117,6 +119,15 @@ const CountryDetails: React.SFC<CountryDetailsProps> = () => {
               </div>
             </div>
           </div>
+
+          <div>
+            <hr />
+            <h2>Borders</h2>
+          </div>
+
+          {data?.borders.map((code) => {
+            return <BorderLink key={code} code={code} />;
+          })}
         </section>
       ) : (
         <Loading />
