@@ -11,13 +11,13 @@ module.exports = (mongoose) => {
       region: String,
       flag: String,
       population: Number,
-      createdAt: { type: Date, expires: 10, default: Date.now },
+      createdAt: { type: Date, expires: 86400, default: Date.now },
     },
     { timestamps: true }
   );
   countrySchema.index(
     { code: 1, region: 1, createdAt: 1 },
-    { expireAfterSeconds: 10 }
+    { expireAfterSeconds: 86400 }
   );
 
   const countryModel = mongoose.model("country", countrySchema);
