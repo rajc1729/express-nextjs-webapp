@@ -25,6 +25,7 @@ exports.checkCacheStatus = (req, res, next) => {
                 region: country.region,
                 flag: country.flag,
                 population: country.population,
+                borders: country.borders,
               };
 
               promises.push(

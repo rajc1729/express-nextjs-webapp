@@ -11,6 +11,7 @@ module.exports = (mongoose) => {
       region: String,
       flag: String,
       population: Number,
+      borders: [{ type: String }],
       createdAt: { type: Date, expires: 86400, default: Date.now },
     },
     { timestamps: true }
