@@ -1,0 +1,22 @@
+.container {
+  margin-top: 90px;
+}
+
+.search_container {
+  // background-color: aqua;
+  display: flex;
+  justify-content: center;
+}
+
+.search_bar {
+  height: 50px;
+  min-width: 150px;
+  max-width: 300px;
+}
+
+.countries_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  justify-items: center;
+}
