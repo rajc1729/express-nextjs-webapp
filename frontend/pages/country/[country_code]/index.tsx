@@ -77,7 +77,7 @@ const CountryDetails: React.SFC<CountryDetailsProps> = () => {
   return (
     <>
       <Head>
-        <title> country_code | Country</title>
+        <title> {country_code} | Country</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

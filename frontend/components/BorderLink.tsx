@@ -8,12 +8,7 @@ export interface BorderLinkProps {
 const BorderLink: React.SFC<BorderLinkProps> = ({ code }) => {
   return (
     <Link href={{ pathname: "/country" + "/" + code }}>
-      <button
-        className={styles.external_link}
-        onClick={(e) => {
-          console.log("ch");
-        }}
-      >
+      <button className={styles.external_link}>
         <svg
           width="15"
           height="15"

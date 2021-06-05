@@ -1,22 +1,47 @@
+@import "_include-media";
+
 .container {
   margin-top: 90px;
 }
 
 .search_container {
-  // background-color: aqua;
   display: flex;
   justify-content: center;
+  align-items: center;
+  @include media("<tablet") {
+    flex-direction: column;
+  }
+}
+
+.search_dropdown {
+  width: 130px;
+  margin-right: 10px;
+  @include media("<tablet") {
+    width: 230px;
+    margin-bottom: 15px;
+  }
 }
 
 .search_bar {
-  height: 50px;
+  height: 40px;
   min-width: 150px;
   max-width: 300px;
 }
 
 .countries_grid {
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // grid-gap: 20px;
+  justify-items: center;
+  // max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  justify-items: center;
+  grid-gap: 24px;
+  @include media("<1450px") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media("<725px") {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
 }
