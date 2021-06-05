@@ -1,5 +1,6 @@
 import styles from "../styles/components/card.module.scss";
 import Link from "next/link";
+import { codeToCountryName } from "../utility";
 
 export interface BorderLinkProps {
   code: string;
@@ -22,7 +23,7 @@ const BorderLink: React.SFC<BorderLinkProps> = ({ code }) => {
             fillOpacity="0.5"
           />
         </svg>
-        {code}
+        {codeToCountryName(code)}
       </button>
     </Link>
   );
